@@ -136,7 +136,7 @@ jobs:
     needs:
       - test-api
 #      - test-others
-#      - test-web-local
+      - test-web-local
 #      - test-web-bs
 #      - test-web-lt
 #      - test-web-grid
