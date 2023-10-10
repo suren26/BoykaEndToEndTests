@@ -36,7 +36,7 @@ jobs:
           check-latest: true
 
       - name: Build the project
-        run: mvn clean install -f core-java/pom.xml -DskipTests
+        run: mvn clean install -f pom.xml -DskipTests
 
   test-api:
     needs:
