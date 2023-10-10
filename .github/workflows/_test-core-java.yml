@@ -97,7 +97,7 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: false
-          script: mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f core-java/pom.xml -Dsuite-name=${{ inputs.suite-name }} -Pcoverage-test
+          script: mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f pom.xml -Dsuite-name=${{ inputs.suite-name }} -Pcoverage-test
 
       - name: All ${{ inputs.suite-name }} Test execution
         if: ${{ ! inputs.run-android }}
@@ -106,7 +106,7 @@ jobs:
           BS_KEY: ${{ secrets.cloudKey }}
           LT_USER: ${{ secrets.cloudUser }}
           LT_KEY: ${{ secrets.cloudKey }}
-        run: mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f core-java/pom.xml -Dsuite-name=${{ inputs.suite-name }} -P${{ inputs.profile-name }}
+        run: mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f pom.xml -Dsuite-name=${{ inputs.suite-name }} -P${{ inputs.profile-name }}
 
       - name: Stop Selenium Grid for Web
         if: ${{ inputs.run-grid && ! inputs.run-appium && always() }}
