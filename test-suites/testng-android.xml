@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Poonawala Fin Corp Dreams Sample Mobile - End to End Tests" parallel="tests" thread-count="1" data-provider-thread-count="1">
+    <test name="Mobile - End to End Tests on Android Emulator Web">
+        <parameter name="driverKey" value="test_local_android_web"/>
+        <classes>
+            <class name="mobile.web.EcommerceMobileEndToEndTests">
+            </class>
+        </classes>
+    </test>
+</suite>

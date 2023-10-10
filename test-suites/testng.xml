@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Poonawala Fin Corp Dreams Sample Test Suite">
+    <suite-files>
+        <suite-file path="testng-api.xml"/>
+        <suite-file path="testng-web.xml"/>
+        <suite-file path="testng-cloud.xml"/>
+        <suite-file path="testng-grid.xml"/>
+    </suite-files>
+</suite>

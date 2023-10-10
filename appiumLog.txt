@@ -1,0 +1,251 @@
+2023-10-10 12:47:40:924 [Appium] Welcome to Appium v2.0.0-rc.5
+2023-10-10 12:47:40:927 [Appium] Non-default server args:
+2023-10-10 12:47:40:932 [Appium] { allowInsecure: [ 'chromedriver_autodownload' ], basePath: '/wd/hub/', port: 16519 }
+2023-10-10 12:47:40:933 [Appium] Attempting to load driver xcuitest...
+2023-10-10 12:47:40:936 [Appium] Requiring driver at /Users/suren/.appium/node_modules/appium-xcuitest-driver
+2023-10-10 12:47:42:463 [Appium] Attempting to load driver uiautomator2...
+2023-10-10 12:47:42:464 [Appium] Requiring driver at /Users/suren/.appium/node_modules/appium-uiautomator2-driver
+2023-10-10 12:47:43:722 [Appium] Appium REST http interface listener started on http://0.0.0.0:16519/wd/hub
+2023-10-10 12:47:43:724 [Appium] You can provide the following URLS in your client code to connect to this server:
+2023-10-10 12:47:43:725 [Appium] 	http://127.0.0.1:16519/wd/hub (only accessible from the same host)
+2023-10-10 12:47:43:725 [Appium] 	http://192.168.29.221:16519/wd/hub
+2023-10-10 12:47:43:725 [Appium] Available drivers:
+2023-10-10 12:47:43:726 [Appium]   - xcuitest@4.32.11 (automationName 'XCUITest')
+2023-10-10 12:47:43:726 [Appium]   - uiautomator2@2.29.2 (automationName 'UiAutomator2')
+2023-10-10 12:47:43:726 [Appium] Available plugins:
+2023-10-10 12:47:43:726 [Appium]   - images@2.1.2
+2023-10-10 12:47:43:727 [Appium]   - element-wait@2.0.3
+2023-10-10 12:47:43:727 [Appium]   - device-farm@8.2.1
+2023-10-10 12:47:43:727 [Appium]   - appium-dashboard@v2.0.2
+2023-10-10 12:47:43:727 [Appium] No plugins activated. Use the --use-plugins flag with names of plugins to activate
+2023-10-10 12:47:43:807 [HTTP] --> GET /wd/hub/status
+2023-10-10 12:47:43:807 [HTTP] {}
+2023-10-10 12:47:43:809 [AppiumDriver@3057] Calling AppiumDriver.getStatus() with args: []
+2023-10-10 12:47:43:810 [AppiumDriver@3057] Responding to client with driver.getStatus() result: {"build":{"version":"2.0.0-rc.5"}}
+2023-10-10 12:47:43:820 [HTTP] <-- GET /wd/hub/status 200 10 ms - 44
+2023-10-10 12:47:43:820 [HTTP] 
+2023-10-10 12:47:50:129 [HTTP] Request idempotency key: ffab55b2-bc09-46c0-beb9-cee15bfa3415
+2023-10-10 12:47:50:147 [HTTP] --> POST /wd/hub/session
+2023-10-10 12:47:50:147 [HTTP] {"capabilities":{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"UiAutomator2","appium:deviceName":"android","browserName":"CHROME","platformName":"ANDROID"}}}
+2023-10-10 12:47:50:148 [AppiumDriver@3057] Calling AppiumDriver.createSession() with args: [null,null,{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"UiAutomator2","appium:deviceName":"android","browserName":"CHROME","platformName":"ANDROID"}}]
+2023-10-10 12:47:50:148 [AppiumDriver@3057] Event 'newSessionRequested' logged at 1696942070148 (18:17:50 GMT+0530 (India Standard Time))
+2023-10-10 12:47:50:152 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'ANDROID'
+2023-10-10 12:47:50:152 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2023-10-10 12:47:50:153 [Appium] Will require it at /Users/suren/.appium/node_modules/appium-uiautomator2-driver
+2023-10-10 12:47:50:153 [Appium] Requiring driver at /Users/suren/.appium/node_modules/appium-uiautomator2-driver
+2023-10-10 12:47:50:153 [AppiumDriver@3057] Appium v2.0.0-rc.5 creating new AndroidUiautomator2Driver (v2.29.2) session
+2023-10-10 12:47:50:153 [AppiumDriver@3057] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2023-10-10 12:47:50:153 [AppiumDriver@3057] Appium's BaseDriver version is 9.3.15
+2023-10-10 12:47:50:153 [AppiumDriver@3057] AndroidUiautomator2Driver's BaseDriver version is 9.3.15
+2023-10-10 12:47:50:155 [AppiumDriver@3057] Explicitly enabling use of insecure features:
+2023-10-10 12:47:50:155 [AppiumDriver@3057]     chromedriver_autodownload
+2023-10-10 12:47:50:157 [AndroidUiautomator2Driver@c618] Creating session with W3C capabilities: {
+2023-10-10 12:47:50:158 [AndroidUiautomator2Driver@c618]   "alwaysMatch": {
+2023-10-10 12:47:50:158 [AndroidUiautomator2Driver@c618]     "browserName": "CHROME",
+2023-10-10 12:47:50:158 [AndroidUiautomator2Driver@c618]     "platformName": "ANDROID",
+2023-10-10 12:47:50:158 [AndroidUiautomator2Driver@c618]     "appium:automationName": "UiAutomator2",
+2023-10-10 12:47:50:158 [AndroidUiautomator2Driver@c618]     "appium:deviceName": "android"
+2023-10-10 12:47:50:158 [AndroidUiautomator2Driver@c618]   },
+2023-10-10 12:47:50:158 [AndroidUiautomator2Driver@c618]   "firstMatch": [
+2023-10-10 12:47:50:158 [AndroidUiautomator2Driver@c618]     {}
+2023-10-10 12:47:50:158 [AndroidUiautomator2Driver@c618]   ]
+2023-10-10 12:47:50:158 [AndroidUiautomator2Driver@c618] }
+2023-10-10 12:47:50:169 [AndroidUiautomator2Driver@c618] The following capabilities were provided, but are not recognized by Appium:
+2023-10-10 12:47:50:169 [AndroidUiautomator2Driver@c618]   deviceName
+2023-10-10 12:47:50:170 [AndroidUiautomator2Driver@c618 (74c532c6)] Session created with session id: 74c532c6-0f53-4eb5-9562-a8d63bce6081
+2023-10-10 12:47:50:170 [AndroidUiautomator2Driver@c618 (74c532c6)] We're going to run a Chrome-based session
+2023-10-10 12:47:50:170 [AndroidUiautomator2Driver@c618 (74c532c6)] Chrome-type package and activity are com.android.chrome and com.google.android.apps.chrome.Main
+2023-10-10 12:47:50:171 [AndroidUiautomator2Driver@c618 (74c532c6)] Starting 'com.android.chrome' directly on the device
+2023-10-10 12:47:50:180 [ADB] Found 2 'build-tools' folders under '/Users/suren/Library/Android/sdk' (newest first):
+2023-10-10 12:47:50:180 [ADB]     /Users/suren/Library/Android/sdk/build-tools/34.0.0
+2023-10-10 12:47:50:180 [ADB]     /Users/suren/Library/Android/sdk/build-tools/30.0.3
+2023-10-10 12:47:50:181 [ADB] Using 'adb' from '/Users/suren/Library/Android/sdk/platform-tools/adb'
+2023-10-10 12:47:50:181 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2023-10-10 12:47:50:469 [AndroidDriver] Retrieving device list
+2023-10-10 12:47:50:470 [ADB] Trying to find a connected android device
+2023-10-10 12:47:50:470 [ADB] Getting connected devices
+2023-10-10 12:47:50:752 [ADB] No connected devices have been detected
+2023-10-10 12:47:50:752 [ADB] Could not find online devices
+2023-10-10 12:47:50:752 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:50:753 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:51:028 [ADB] Getting connected devices
+2023-10-10 12:47:51:055 [ADB] No connected devices have been detected
+2023-10-10 12:47:51:055 [ADB] Could not find online devices
+2023-10-10 12:47:51:055 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:51:055 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:51:282 [ADB] Getting connected devices
+2023-10-10 12:47:51:308 [ADB] No connected devices have been detected
+2023-10-10 12:47:51:308 [ADB] Could not find online devices
+2023-10-10 12:47:51:308 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:51:308 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:51:536 [ADB] Getting connected devices
+2023-10-10 12:47:51:561 [ADB] No connected devices have been detected
+2023-10-10 12:47:51:561 [ADB] Could not find online devices
+2023-10-10 12:47:51:561 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:51:562 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:51:788 [ADB] Getting connected devices
+2023-10-10 12:47:51:813 [ADB] No connected devices have been detected
+2023-10-10 12:47:51:813 [ADB] Could not find online devices
+2023-10-10 12:47:51:813 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:51:814 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:52:038 [ADB] Getting connected devices
+2023-10-10 12:47:52:064 [ADB] No connected devices have been detected
+2023-10-10 12:47:52:064 [ADB] Could not find online devices
+2023-10-10 12:47:52:064 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:52:064 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:52:290 [ADB] Getting connected devices
+2023-10-10 12:47:52:318 [ADB] No connected devices have been detected
+2023-10-10 12:47:52:318 [ADB] Could not find online devices
+2023-10-10 12:47:52:318 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:52:318 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:52:546 [ADB] Getting connected devices
+2023-10-10 12:47:52:571 [ADB] No connected devices have been detected
+2023-10-10 12:47:52:571 [ADB] Could not find online devices
+2023-10-10 12:47:52:571 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:52:571 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:52:798 [ADB] Getting connected devices
+2023-10-10 12:47:52:823 [ADB] No connected devices have been detected
+2023-10-10 12:47:52:823 [ADB] Could not find online devices
+2023-10-10 12:47:52:823 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:52:823 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:53:049 [ADB] Getting connected devices
+2023-10-10 12:47:53:074 [ADB] No connected devices have been detected
+2023-10-10 12:47:53:074 [ADB] Could not find online devices
+2023-10-10 12:47:53:075 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:53:075 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:53:301 [ADB] Getting connected devices
+2023-10-10 12:47:53:326 [ADB] No connected devices have been detected
+2023-10-10 12:47:53:327 [ADB] Could not find online devices
+2023-10-10 12:47:53:327 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:53:327 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:53:552 [ADB] Getting connected devices
+2023-10-10 12:47:53:577 [ADB] No connected devices have been detected
+2023-10-10 12:47:53:577 [ADB] Could not find online devices
+2023-10-10 12:47:53:577 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:53:577 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:53:804 [ADB] Getting connected devices
+2023-10-10 12:47:53:831 [ADB] No connected devices have been detected
+2023-10-10 12:47:53:831 [ADB] Could not find online devices
+2023-10-10 12:47:53:831 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:53:831 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:54:060 [ADB] Getting connected devices
+2023-10-10 12:47:54:084 [ADB] No connected devices have been detected
+2023-10-10 12:47:54:085 [ADB] Could not find online devices
+2023-10-10 12:47:54:085 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:54:085 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:54:311 [ADB] Getting connected devices
+2023-10-10 12:47:54:336 [ADB] No connected devices have been detected
+2023-10-10 12:47:54:336 [ADB] Could not find online devices
+2023-10-10 12:47:54:336 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:54:337 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:54:561 [ADB] Getting connected devices
+2023-10-10 12:47:54:587 [ADB] No connected devices have been detected
+2023-10-10 12:47:54:587 [ADB] Could not find online devices
+2023-10-10 12:47:54:587 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:54:587 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:54:813 [ADB] Getting connected devices
+2023-10-10 12:47:54:839 [ADB] No connected devices have been detected
+2023-10-10 12:47:54:839 [ADB] Could not find online devices
+2023-10-10 12:47:54:839 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:54:839 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:55:065 [ADB] Getting connected devices
+2023-10-10 12:47:55:090 [ADB] No connected devices have been detected
+2023-10-10 12:47:55:091 [ADB] Could not find online devices
+2023-10-10 12:47:55:091 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:55:091 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:55:316 [ADB] Getting connected devices
+2023-10-10 12:47:55:342 [ADB] No connected devices have been detected
+2023-10-10 12:47:55:342 [ADB] Could not find online devices
+2023-10-10 12:47:55:342 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:55:342 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:55:568 [ADB] Getting connected devices
+2023-10-10 12:47:55:596 [ADB] No connected devices have been detected
+2023-10-10 12:47:55:597 [ADB] Could not find online devices
+2023-10-10 12:47:55:597 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:55:597 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:55:823 [ADB] Getting connected devices
+2023-10-10 12:47:55:849 [ADB] No connected devices have been detected
+2023-10-10 12:47:55:849 [ADB] Could not find online devices
+2023-10-10 12:47:55:849 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:55:849 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:56:075 [ADB] Getting connected devices
+2023-10-10 12:47:56:101 [ADB] No connected devices have been detected
+2023-10-10 12:47:56:101 [ADB] Could not find online devices
+2023-10-10 12:47:56:101 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:56:101 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:56:326 [ADB] Getting connected devices
+2023-10-10 12:47:56:353 [ADB] No connected devices have been detected
+2023-10-10 12:47:56:353 [ADB] Could not find online devices
+2023-10-10 12:47:56:353 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:56:353 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:56:580 [ADB] Getting connected devices
+2023-10-10 12:47:56:605 [ADB] No connected devices have been detected
+2023-10-10 12:47:56:605 [ADB] Could not find online devices
+2023-10-10 12:47:56:605 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:56:606 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:56:833 [ADB] Getting connected devices
+2023-10-10 12:47:56:859 [ADB] No connected devices have been detected
+2023-10-10 12:47:56:859 [ADB] Could not find online devices
+2023-10-10 12:47:56:859 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:56:859 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:57:085 [ADB] Getting connected devices
+2023-10-10 12:47:57:110 [ADB] No connected devices have been detected
+2023-10-10 12:47:57:110 [ADB] Could not find online devices
+2023-10-10 12:47:57:110 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:57:110 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:57:337 [ADB] Getting connected devices
+2023-10-10 12:47:57:362 [ADB] No connected devices have been detected
+2023-10-10 12:47:57:363 [ADB] Could not find online devices
+2023-10-10 12:47:57:363 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:57:363 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:57:589 [ADB] Getting connected devices
+2023-10-10 12:47:57:615 [ADB] No connected devices have been detected
+2023-10-10 12:47:57:615 [ADB] Could not find online devices
+2023-10-10 12:47:57:615 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:57:615 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:57:841 [ADB] Getting connected devices
+2023-10-10 12:47:57:865 [ADB] No connected devices have been detected
+2023-10-10 12:47:57:866 [ADB] Could not find online devices
+2023-10-10 12:47:57:866 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:57:867 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:58:092 [ADB] Getting connected devices
+2023-10-10 12:47:58:117 [ADB] No connected devices have been detected
+2023-10-10 12:47:58:117 [ADB] Could not find online devices
+2023-10-10 12:47:58:117 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:58:117 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:58:343 [ADB] Getting connected devices
+2023-10-10 12:47:58:369 [ADB] No connected devices have been detected
+2023-10-10 12:47:58:369 [ADB] Could not find online devices
+2023-10-10 12:47:58:369 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:58:369 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:58:594 [ADB] Getting connected devices
+2023-10-10 12:47:58:621 [ADB] No connected devices have been detected
+2023-10-10 12:47:58:621 [ADB] Could not find online devices
+2023-10-10 12:47:58:621 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:58:621 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:58:851 [ADB] Getting connected devices
+2023-10-10 12:47:58:876 [ADB] No connected devices have been detected
+2023-10-10 12:47:58:876 [ADB] Could not find online devices
+2023-10-10 12:47:58:876 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:58:877 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:59:103 [ADB] Getting connected devices
+2023-10-10 12:47:59:129 [ADB] No connected devices have been detected
+2023-10-10 12:47:59:129 [ADB] Could not find online devices
+2023-10-10 12:47:59:129 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:59:129 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:59:355 [ADB] Getting connected devices
+2023-10-10 12:47:59:381 [ADB] No connected devices have been detected
+2023-10-10 12:47:59:381 [ADB] Could not find online devices
+2023-10-10 12:47:59:381 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:59:381 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:59:607 [ADB] Getting connected devices
+2023-10-10 12:47:59:632 [ADB] No connected devices have been detected
+2023-10-10 12:47:59:632 [ADB] Could not find online devices
+2023-10-10 12:47:59:632 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:59:632 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:59:857 [ADB] Getting connected devices
+2023-10-10 12:47:59:881 [ADB] No connected devices have been detected
+2023-10-10 12:47:59:882 [ADB] Could not find online devices
+2023-10-10 12:47:59:882 [ADB] Reconnecting adb (target offline)
+2023-10-10 12:47:59:882 [ADB] Running '/Users/suren/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2023-10-10 12:47:59:923 [Appium] Received SIGINT - shutting down
