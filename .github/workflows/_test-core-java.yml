@@ -1,0 +1,133 @@
+name: Common Test workflow
+
+on:
+  workflow_call:
+    inputs:
+      runs-on:
+        type: string
+        description: On which runner to run on
+        default: ubuntu-latest
+      java-version:
+        type: string
+        description: Version of Java to run on
+        default: 11
+      suite-name:
+        type: string
+        description: Test Suite name to run
+        default: ''
+      profile-name:
+        type: string
+        description: Test Profile Name
+        default: coverage-test
+      run-appium:
+        type: boolean
+        description: Start Appium server
+        default: false
+      emulator-target:
+        type: string
+        description: Emulator target image
+        default: google_apis
+      run-grid:
+        type: boolean
+        description: Start Selenium Grid
+        default: false
+      run-ios:
+        type: boolean
+        description: Start iOS Simulator
+        default: false
+      run-android:
+        type: boolean
+        description: Start Android Emulator
+        default: false
+      run-web:
+        type: boolean
+        description: Start Local Web Browser
+        default: false
+    secrets:
+      cloudUser:
+        required: false
+      cloudKey:
+        required: false
+
+jobs:
+  test:
+    runs-on: ${{ inputs.runs-on }}
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Install Java and Maven
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ inputs.java-version }}
+          distribution: 'temurin'
+          cache: 'maven'
+          check-latest: true
+
+      - name: Install Appium 2.0
+        if: ${{ inputs.run-appium }}
+        run: |
+          npm install -g appium
+          appium driver install uiautomator2
+          appium driver install xcuitest
+
+      - name: Start Selenium Grid for Web
+        if: ${{ inputs.run-grid && ! inputs.run-appium }}
+        run: |
+          docker-compose -f core-java/compose/docker-compose.yml up -d
+
+      - name: Launch iOS Simulator
+        if: ${{ inputs.run-ios }}
+        uses: futureware-tech/simulator-action@v2
+        with:
+          model: 'iPhone 14'
+          os: 'iOS'
+          os_version: 16.2
+          shutdown_after_job: true
+
+      - name: All Test execution
+        if: ${{ inputs.run-android }}
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          avd-name: Pixel_7_Pro
+          api-level: 30
+          target: ${{ inputs.emulator-target }}
+          arch: x86_64
+          profile: Nexus 6
+          force-avd-creation: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: false
+          script: mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f core-java/pom.xml -Dsuite-name=${{ inputs.suite-name }} -Pcoverage-test
+
+      - name: All ${{ inputs.suite-name }} Test execution
+        if: ${{ ! inputs.run-android }}
+        env:
+          BS_USER: ${{ secrets.cloudUser }}
+          BS_KEY: ${{ secrets.cloudKey }}
+          LT_USER: ${{ secrets.cloudUser }}
+          LT_KEY: ${{ secrets.cloudKey }}
+        run: mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f core-java/pom.xml -Dsuite-name=${{ inputs.suite-name }} -P${{ inputs.profile-name }}
+
+      - name: Stop Selenium Grid for Web
+        if: ${{ inputs.run-grid && ! inputs.run-appium && always() }}
+        run: |
+          docker-compose -f core-java/compose/docker-compose.yml down --remove-orphans
+
+      - name: Upload target folder
+        uses: actions/upload-artifact@v3
+        if: ${{ failure() }}
+        with:
+          name: target-${{ inputs.suite-name }}
+          retention-days: 1
+          path: |
+            ${{ github.workspace }}/core-java/target
+            ${{ github.workspace }}/core-java/logs
+            ${{ github.workspace }}/core-java/screenshots
+
+      - name: Upload reports folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: reports-${{ inputs.suite-name }}
+          retention-days: 1
+          path: |
+            ${{ github.workspace }}/core-java/reports

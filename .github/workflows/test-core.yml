@@ -1,0 +1,279 @@
+name: Test Automation project
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - develop
+    paths:
+      - 'core-java/**'
+      - '.github/**'
+
+concurrency:
+  group: boyka-tests-${{ github.ref }}-1
+  cancel-in-progress: true
+
+env:
+  BS_USER: ${{ secrets.BS_USER }}
+  BS_KEY: ${{ secrets.BS_KEY }}
+  LT_USER: ${{ secrets.LT_USER }}
+  LT_KEY: ${{ secrets.LT_KEY }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Install Java and Maven
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: 'maven'
+          check-latest: true
+
+      - name: Build the project
+        run: mvn clean install -f core-java/pom.xml -DskipTests
+
+  test-api:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      suite-name: testng-api
+
+  test-others:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      suite-name: testng-others
+
+  test-web-local:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      suite-name: testng-web-local
+      runs-on: macos-latest
+
+  test-web-bs:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    secrets:
+      cloudUser: ${{ secrets.BS_USER }}
+      cloudKey: ${{ secrets.BS_KEY }}
+    with:
+      suite-name: testng-web-bs
+
+  test-web-lt:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    secrets:
+      cloudUser: ${{ secrets.LT_USER }}
+      cloudKey: ${{ secrets.LT_KEY }}
+    with:
+      suite-name: testng-web-lt
+
+  test-web-grid:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      suite-name: testng-web-grid
+      run-grid: true
+
+  test-mobile-local:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      runs-on: macos-latest
+      suite-name: testng-mobile-local
+      run-appium: true
+      run-ios: true
+      run-android: true
+      emulator-target: playstore
+
+  test-mobile-web:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      runs-on: macos-latest
+      suite-name: testng-mobile-web
+      run-appium: true
+      run-ios: true
+      run-android: true
+      emulator-target: playstore
+
+  test-mobile-bs:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    secrets:
+      cloudUser: ${{ secrets.BS_USER }}
+      cloudKey: ${{ secrets.BS_KEY }}
+    with:
+      suite-name: testng-mobile-bs
+
+  test-mobile-lt:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    secrets:
+      cloudUser: ${{ secrets.LT_USER }}
+      cloudKey: ${{ secrets.LT_KEY }}
+    with:
+      suite-name: testng-mobile-lt
+
+  report:
+    needs:
+      - test-api
+      - test-others
+      - test-web-local
+      - test-web-bs
+      - test-web-lt
+      - test-web-grid
+      - test-mobile-local
+      - test-mobile-web
+      - test-mobile-bs
+      - test-mobile-lt
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Install Java and Maven
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: 'temurin'
+          cache: 'maven'
+          check-latest: true
+
+      - name: Download reports-testng-api files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-api
+          path: ${{ github.workspace }}/core-java/reports
+
+      - name: Download reports-testng-mobile-bs files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-mobile-bs
+          path: ${{ github.workspace }}/core-java/reports
+
+      - name: Download reports-testng-mobile-local files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-mobile-local
+          path: ${{ github.workspace }}/core-java/reports
+
+      - name: Download reports-testng-mobile-web files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-mobile-web
+          path: ${{ github.workspace }}/core-java/reports
+
+      - name: Download reports-testng-mobile-lt files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-mobile-lt
+          path: ${{ github.workspace }}/core-java/reports
+
+      - name: Download reports-testng-others files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-others
+          path: ${{ github.workspace }}/core-java/reports
+
+      - name: Download reports-testng-web-bs files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-web-bs
+          path: ${{ github.workspace }}/core-java/reports
+
+      - name: Download reports-testng-web-grid files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-web-grid
+          path: ${{ github.workspace }}/core-java/reports
+
+      - name: Download reports-testng-web-local files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-web-local
+          path: ${{ github.workspace }}/core-java/reports
+
+      - name: Download reports-testng-web-lt files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-web-lt
+          path: ${{ github.workspace }}/core-java/reports
+
+      - name: Generate Code Coverage Report
+        run: |
+          mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f core-java/pom.xml -Pcoverage-report
+
+      - name: Upload target folder
+        uses: actions/upload-artifact@v3
+        if: ${{ always() }}
+        with:
+          name: target-${{ github.run_id }}
+          retention-days: 1
+          path: |
+            ${{ github.workspace }}/core-java/target
+            ${{ github.workspace }}/core-java/logs
+            ${{ github.workspace }}/core-java/selenium-grid.log
+            ${{ github.workspace }}/core-java/screenshots
+
+      - name: Upload reports folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: reports-${{ github.run_id }}
+          retention-days: 1
+          path: |
+            ${{ github.workspace }}/core-java/reports
+
+  analysis:
+    needs:
+      - report
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install Java and Maven
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: 'maven'
+          check-latest: true
+
+      - name: Download target folder
+        uses: actions/download-artifact@v3
+        with:
+          name: target-${{ github.run_id }}
+          path: ${{ github.workspace }}/core-java
+
+      - name: Download reports folder
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-${{ github.run_id }}
+          path: ${{ github.workspace }}/core-java
+
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B sonar:sonar -f core-java/pom.xml -DskipTests -Dcheckstyle.skip
