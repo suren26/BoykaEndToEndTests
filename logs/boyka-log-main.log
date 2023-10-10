@@ -1,153 +1,153 @@
-[18:19:41.945] [INFO ] [main] - Switching current session persona from [] to [test_restfulbooker]... (ParallelSession:switchPersona:149) 
-[18:19:42.427] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
-[18:19:44.452] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking (ApiActions:logRequest:227) 
-[18:19:44.453] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
-[18:19:44.453] [INFO ] [main] - Request Body: {
+[23:47:12.359] [INFO ] [main] - Switching current session persona from [] to [test_restfulbooker]... (ParallelSession:switchPersona:148) 
+[23:47:12.891] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
+[23:47:14.896] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking (ApiActions:logRequest:227) 
+[23:47:14.897] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
+[23:47:14.897] [INFO ] [main] - Request Body: {
   "additionalneeds": "Breakfast",
   "bookingdates": {
     "checkin": "2023-10-05",
-    "checkout": "2023-10-15"
+    "checkout": "2023-10-12"
   },
   "depositpaid": true,
-  "firstname": "Terisa",
-  "lastname": "Zboncak",
-  "totalprice": 876
+  "firstname": "Lupe",
+  "lastname": "Lind",
+  "totalprice": 129
 } (ApiActions:logRequest:233) 
-[18:19:44.459] [INFO ] [main] - Request Curl: curl -X POST -H "Accept:application/json" -H "Content-Type:application/json; charset=utf-8" -d '{
+[23:47:14.904] [INFO ] [main] - Request Curl: curl -X POST -H "Accept:application/json" -H "Content-Type:application/json; charset=utf-8" -d '{
   "additionalneeds": "Breakfast",
   "bookingdates": {
     "checkin": "2023-10-05",
-    "checkout": "2023-10-15"
+    "checkout": "2023-10-12"
   },
   "depositpaid": true,
-  "firstname": "Terisa",
-  "lastname": "Zboncak",
-  "totalprice": 876
+  "firstname": "Lupe",
+  "lastname": "Lind",
+  "totalprice": 129
 }' "https://restful-booker.herokuapp.com/booking"  (ApiActions:logRequest:236) 
-[18:19:44.460] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
-[18:19:44.470] [INFO ] [main] - Verifying text field for expression: bookingid (ApiResponse:verifyTextField:206) 
-[18:19:44.470] [INFO ] [main] - Get response data for expression: bookingid (ApiResponse:getResponseData:82) 
-[18:19:44.470] [INFO ] [main] - Get response data for expression: bookingid and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:44.519] [INFO ] [main] - Verifying text field for expression: booking.firstname (ApiResponse:verifyTextField:206) 
-[18:19:44.519] [INFO ] [main] - Get response data for expression: booking.firstname (ApiResponse:getResponseData:82) 
-[18:19:44.520] [INFO ] [main] - Get response data for expression: booking.firstname and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:44.520] [INFO ] [main] - Verifying text field for expression: booking.lastname (ApiResponse:verifyTextField:206) 
-[18:19:44.521] [INFO ] [main] - Get response data for expression: booking.lastname (ApiResponse:getResponseData:82) 
-[18:19:44.521] [INFO ] [main] - Get response data for expression: booking.lastname and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:44.521] [INFO ] [main] - Get response data for expression: bookingid (ApiResponse:getResponseData:82) 
-[18:19:44.522] [INFO ] [main] - Get response data for expression: bookingid and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:44.525] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
-[18:19:45.755] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking/3865 (ApiActions:logRequest:227) 
-[18:19:45.755] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
-[18:19:45.756] [INFO ] [main] - Request Body: {} (ApiActions:logRequest:233) 
-[18:19:45.756] [INFO ] [main] - Request Curl: curl -X GET -H "Accept:application/json" "https://restful-booker.herokuapp.com/booking/3865"  (ApiActions:logRequest:236) 
-[18:19:45.756] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
-[18:19:45.757] [INFO ] [main] - Verifying text field for expression: firstname (ApiResponse:verifyTextField:206) 
-[18:19:45.757] [INFO ] [main] - Get response data for expression: firstname (ApiResponse:getResponseData:82) 
-[18:19:45.757] [INFO ] [main] - Get response data for expression: firstname and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:45.758] [INFO ] [main] - Verifying text field for expression: lastname (ApiResponse:verifyTextField:206) 
-[18:19:45.758] [INFO ] [main] - Get response data for expression: lastname (ApiResponse:getResponseData:82) 
-[18:19:45.758] [INFO ] [main] - Get response data for expression: lastname and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:45.760] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
-[18:19:47.019] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/auth (ApiActions:logRequest:227) 
-[18:19:47.019] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
-[18:19:47.020] [INFO ] [main] - Request Body: {
+[23:47:14.905] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
+[23:47:14.918] [INFO ] [main] - Verifying text field for expression: bookingid (ApiResponse:verifyTextField:206) 
+[23:47:14.918] [INFO ] [main] - Get response data for expression: bookingid (ApiResponse:getResponseData:82) 
+[23:47:14.918] [INFO ] [main] - Get response data for expression: bookingid and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:14.967] [INFO ] [main] - Verifying text field for expression: booking.firstname (ApiResponse:verifyTextField:206) 
+[23:47:14.967] [INFO ] [main] - Get response data for expression: booking.firstname (ApiResponse:getResponseData:82) 
+[23:47:14.968] [INFO ] [main] - Get response data for expression: booking.firstname and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:14.968] [INFO ] [main] - Verifying text field for expression: booking.lastname (ApiResponse:verifyTextField:206) 
+[23:47:14.968] [INFO ] [main] - Get response data for expression: booking.lastname (ApiResponse:getResponseData:82) 
+[23:47:14.969] [INFO ] [main] - Get response data for expression: booking.lastname and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:14.969] [INFO ] [main] - Get response data for expression: bookingid (ApiResponse:getResponseData:82) 
+[23:47:14.970] [INFO ] [main] - Get response data for expression: bookingid and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:14.974] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
+[23:47:16.136] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking/2588 (ApiActions:logRequest:227) 
+[23:47:16.137] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
+[23:47:16.137] [INFO ] [main] - Request Body: {} (ApiActions:logRequest:233) 
+[23:47:16.137] [INFO ] [main] - Request Curl: curl -X GET -H "Accept:application/json" "https://restful-booker.herokuapp.com/booking/2588"  (ApiActions:logRequest:236) 
+[23:47:16.138] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
+[23:47:16.138] [INFO ] [main] - Verifying text field for expression: firstname (ApiResponse:verifyTextField:206) 
+[23:47:16.138] [INFO ] [main] - Get response data for expression: firstname (ApiResponse:getResponseData:82) 
+[23:47:16.139] [INFO ] [main] - Get response data for expression: firstname and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:16.139] [INFO ] [main] - Verifying text field for expression: lastname (ApiResponse:verifyTextField:206) 
+[23:47:16.139] [INFO ] [main] - Get response data for expression: lastname (ApiResponse:getResponseData:82) 
+[23:47:16.140] [INFO ] [main] - Get response data for expression: lastname and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:16.142] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
+[23:47:17.398] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/auth (ApiActions:logRequest:227) 
+[23:47:17.398] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
+[23:47:17.399] [INFO ] [main] - Request Body: {
   "password": "password123",
   "username": "admin"
 } (ApiActions:logRequest:233) 
-[18:19:47.020] [INFO ] [main] - Request Curl: curl -X POST -H "Accept:application/json" -H "Content-Type:application/json; charset=utf-8" -d '{
+[23:47:17.399] [INFO ] [main] - Request Curl: curl -X POST -H "Accept:application/json" -H "Content-Type:application/json; charset=utf-8" -d '{
   "password": "password123",
   "username": "admin"
 }' "https://restful-booker.herokuapp.com/auth"  (ApiActions:logRequest:236) 
-[18:19:47.021] [INFO ] [main] - Get response data for expression: token (ApiResponse:getResponseData:82) 
-[18:19:47.021] [INFO ] [main] - Get response data for expression: token and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:47.021] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
-[18:19:48.314] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking/3865 (ApiActions:logRequest:227) 
-[18:19:48.315] [INFO ] [main] - Request Header: Cookie => token=42b4c84406846ca (ApiActions:lambda$logRequest$2:229) 
-[18:19:48.315] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
-[18:19:48.315] [INFO ] [main] - Request Body: {
+[23:47:17.400] [INFO ] [main] - Get response data for expression: token (ApiResponse:getResponseData:82) 
+[23:47:17.400] [INFO ] [main] - Get response data for expression: token and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:17.400] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
+[23:47:18.614] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking/2588 (ApiActions:logRequest:227) 
+[23:47:18.614] [INFO ] [main] - Request Header: Cookie => token=7fda9fd29dbe955 (ApiActions:lambda$logRequest$2:229) 
+[23:47:18.614] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
+[23:47:18.615] [INFO ] [main] - Request Body: {
   "additionalneeds": "Breakfast",
   "bookingdates": {
-    "checkin": "2023-10-09",
+    "checkin": "2023-09-25",
     "checkout": "2023-10-15"
   },
   "depositpaid": true,
-  "firstname": "Major",
-  "lastname": "Reichel",
-  "totalprice": 1896
+  "firstname": "Fatima",
+  "lastname": "Cremin",
+  "totalprice": 320
 } (ApiActions:logRequest:233) 
-[18:19:48.316] [INFO ] [main] - Request Curl: curl -X PUT -H "Accept:application/json" -H "Cookie:token=42b4c84406846ca" -H "Content-Type:application/json; charset=utf-8" -d '{
+[23:47:18.615] [INFO ] [main] - Request Curl: curl -X PUT -H "Accept:application/json" -H "Cookie:token=7fda9fd29dbe955" -H "Content-Type:application/json; charset=utf-8" -d '{
   "additionalneeds": "Breakfast",
   "bookingdates": {
-    "checkin": "2023-10-09",
+    "checkin": "2023-09-25",
     "checkout": "2023-10-15"
   },
   "depositpaid": true,
-  "firstname": "Major",
-  "lastname": "Reichel",
-  "totalprice": 1896
-}' "https://restful-booker.herokuapp.com/booking/3865"  (ApiActions:logRequest:236) 
-[18:19:48.316] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
-[18:19:48.316] [INFO ] [main] - Verifying text field for expression: firstname (ApiResponse:verifyTextField:206) 
-[18:19:48.317] [INFO ] [main] - Get response data for expression: firstname (ApiResponse:getResponseData:82) 
-[18:19:48.317] [INFO ] [main] - Get response data for expression: firstname and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:48.317] [INFO ] [main] - Verifying text field for expression: lastname (ApiResponse:verifyTextField:206) 
-[18:19:48.318] [INFO ] [main] - Get response data for expression: lastname (ApiResponse:getResponseData:82) 
-[18:19:48.318] [INFO ] [main] - Get response data for expression: lastname and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:48.319] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
-[18:19:49.706] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/auth (ApiActions:logRequest:227) 
-[18:19:49.707] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
-[18:19:49.707] [INFO ] [main] - Request Body: {
+  "firstname": "Fatima",
+  "lastname": "Cremin",
+  "totalprice": 320
+}' "https://restful-booker.herokuapp.com/booking/2588"  (ApiActions:logRequest:236) 
+[23:47:18.616] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
+[23:47:18.616] [INFO ] [main] - Verifying text field for expression: firstname (ApiResponse:verifyTextField:206) 
+[23:47:18.616] [INFO ] [main] - Get response data for expression: firstname (ApiResponse:getResponseData:82) 
+[23:47:18.617] [INFO ] [main] - Get response data for expression: firstname and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:18.617] [INFO ] [main] - Verifying text field for expression: lastname (ApiResponse:verifyTextField:206) 
+[23:47:18.617] [INFO ] [main] - Get response data for expression: lastname (ApiResponse:getResponseData:82) 
+[23:47:18.618] [INFO ] [main] - Get response data for expression: lastname and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:18.619] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
+[23:47:19.765] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/auth (ApiActions:logRequest:227) 
+[23:47:19.765] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
+[23:47:19.765] [INFO ] [main] - Request Body: {
   "password": "password123",
   "username": "admin"
 } (ApiActions:logRequest:233) 
-[18:19:49.708] [INFO ] [main] - Request Curl: curl -X POST -H "Accept:application/json" -H "Content-Type:application/json; charset=utf-8" -d '{
+[23:47:19.766] [INFO ] [main] - Request Curl: curl -X POST -H "Accept:application/json" -H "Content-Type:application/json; charset=utf-8" -d '{
   "password": "password123",
   "username": "admin"
 }' "https://restful-booker.herokuapp.com/auth"  (ApiActions:logRequest:236) 
-[18:19:49.708] [INFO ] [main] - Get response data for expression: token (ApiResponse:getResponseData:82) 
-[18:19:49.708] [INFO ] [main] - Get response data for expression: token and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:49.709] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
-[18:19:50.959] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking/3865 (ApiActions:logRequest:227) 
-[18:19:50.959] [INFO ] [main] - Request Header: Cookie => token=ce0db419ed439e8 (ApiActions:lambda$logRequest$2:229) 
-[18:19:50.960] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
-[18:19:50.960] [INFO ] [main] - Request Body: {
-  "firstname": "Leeann",
-  "totalprice": 3836
+[23:47:19.766] [INFO ] [main] - Get response data for expression: token (ApiResponse:getResponseData:82) 
+[23:47:19.767] [INFO ] [main] - Get response data for expression: token and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:19.767] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
+[23:47:20.957] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking/2588 (ApiActions:logRequest:227) 
+[23:47:20.958] [INFO ] [main] - Request Header: Cookie => token=c44c5fdc0d626d3 (ApiActions:lambda$logRequest$2:229) 
+[23:47:20.958] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
+[23:47:20.959] [INFO ] [main] - Request Body: {
+  "firstname": "Shana",
+  "totalprice": 736
 } (ApiActions:logRequest:233) 
-[18:19:50.961] [INFO ] [main] - Request Curl: curl -X PATCH -H "Accept:application/json" -H "Cookie:token=ce0db419ed439e8" -H "Content-Type:application/json; charset=utf-8" -d '{
-  "firstname": "Leeann",
-  "totalprice": 3836
-}' "https://restful-booker.herokuapp.com/booking/3865"  (ApiActions:logRequest:236) 
-[18:19:50.961] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
-[18:19:50.961] [INFO ] [main] - Verifying text field for expression: firstname (ApiResponse:verifyTextField:206) 
-[18:19:50.961] [INFO ] [main] - Get response data for expression: firstname (ApiResponse:getResponseData:82) 
-[18:19:50.962] [INFO ] [main] - Get response data for expression: firstname and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:50.962] [INFO ] [main] - Verifying integer field for expression: totalprice (ApiResponse:verifyIntField:141) 
-[18:19:50.962] [INFO ] [main] - Get response data for expression: totalprice and type: class java.lang.Integer (ApiResponse:getResponseData:97) 
-[18:19:50.964] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
-[18:19:52.447] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/auth (ApiActions:logRequest:227) 
-[18:19:52.447] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
-[18:19:52.448] [INFO ] [main] - Request Body: {
+[23:47:20.959] [INFO ] [main] - Request Curl: curl -X PATCH -H "Accept:application/json" -H "Cookie:token=c44c5fdc0d626d3" -H "Content-Type:application/json; charset=utf-8" -d '{
+  "firstname": "Shana",
+  "totalprice": 736
+}' "https://restful-booker.herokuapp.com/booking/2588"  (ApiActions:logRequest:236) 
+[23:47:20.959] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
+[23:47:20.960] [INFO ] [main] - Verifying text field for expression: firstname (ApiResponse:verifyTextField:206) 
+[23:47:20.960] [INFO ] [main] - Get response data for expression: firstname (ApiResponse:getResponseData:82) 
+[23:47:20.960] [INFO ] [main] - Get response data for expression: firstname and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:20.961] [INFO ] [main] - Verifying integer field for expression: totalprice (ApiResponse:verifyIntField:141) 
+[23:47:20.961] [INFO ] [main] - Get response data for expression: totalprice and type: class java.lang.Integer (ApiResponse:getResponseData:97) 
+[23:47:20.962] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
+[23:47:22.197] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/auth (ApiActions:logRequest:227) 
+[23:47:22.198] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
+[23:47:22.198] [INFO ] [main] - Request Body: {
   "password": "password123",
   "username": "admin"
 } (ApiActions:logRequest:233) 
-[18:19:52.448] [INFO ] [main] - Request Curl: curl -X POST -H "Accept:application/json" -H "Content-Type:application/json; charset=utf-8" -d '{
+[23:47:22.199] [INFO ] [main] - Request Curl: curl -X POST -H "Accept:application/json" -H "Content-Type:application/json; charset=utf-8" -d '{
   "password": "password123",
   "username": "admin"
 }' "https://restful-booker.herokuapp.com/auth"  (ApiActions:logRequest:236) 
-[18:19:52.449] [INFO ] [main] - Get response data for expression: token (ApiResponse:getResponseData:82) 
-[18:19:52.449] [INFO ] [main] - Get response data for expression: token and type: class java.lang.String (ApiResponse:getResponseData:97) 
-[18:19:52.449] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
-[18:19:53.943] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking/3865 (ApiActions:logRequest:227) 
-[18:19:53.944] [INFO ] [main] - Request Header: Cookie => token=ee8ed18c4555369 (ApiActions:lambda$logRequest$2:229) 
-[18:19:53.944] [INFO ] [main] - Request Header: Content-Type => application/json (ApiActions:lambda$logRequest$2:229) 
-[18:19:53.944] [INFO ] [main] - Request Curl: curl -X DELETE -H "Content-Type:application/json" -H "Cookie:token=ee8ed18c4555369" -d '' "https://restful-booker.herokuapp.com/booking/3865"  (ApiActions:logRequest:236) 
-[18:19:53.945] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
-[18:19:53.946] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
-[18:19:55.456] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking/3865 (ApiActions:logRequest:227) 
-[18:19:55.456] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
-[18:19:55.456] [INFO ] [main] - Request Body: {} (ApiActions:logRequest:233) 
-[18:19:55.457] [INFO ] [main] - Request Curl: curl -X GET -H "Accept:application/json" "https://restful-booker.herokuapp.com/booking/3865"  (ApiActions:logRequest:236) 
-[18:19:55.457] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
-[18:19:55.460] [INFO ] [main] - Clearing session for persona [test_restfulbooker]... (ParallelSession:clearSession:69) 
+[23:47:22.199] [INFO ] [main] - Get response data for expression: token (ApiResponse:getResponseData:82) 
+[23:47:22.199] [INFO ] [main] - Get response data for expression: token and type: class java.lang.String (ApiResponse:getResponseData:97) 
+[23:47:22.200] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
+[23:47:23.303] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking/2588 (ApiActions:logRequest:227) 
+[23:47:23.304] [INFO ] [main] - Request Header: Cookie => token=aacfea96ba744c0 (ApiActions:lambda$logRequest$2:229) 
+[23:47:23.304] [INFO ] [main] - Request Header: Content-Type => application/json (ApiActions:lambda$logRequest$2:229) 
+[23:47:23.305] [INFO ] [main] - Request Curl: curl -X DELETE -H "Content-Type:application/json" -H "Cookie:token=aacfea96ba744c0" -d '' "https://restful-booker.herokuapp.com/booking/2588"  (ApiActions:logRequest:236) 
+[23:47:23.305] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
+[23:47:23.307] [WARN ] [main] - No listeners found for listener type [API_ACTION] in Boyka config... (DriverSession:getListener:129) 
+[23:47:24.461] [INFO ] [main] - Request URL: https://restful-booker.herokuapp.com/booking/2588 (ApiActions:logRequest:227) 
+[23:47:24.462] [INFO ] [main] - Request Header: Accept => application/json (ApiActions:lambda$logRequest$2:229) 
+[23:47:24.462] [INFO ] [main] - Request Body: {} (ApiActions:logRequest:233) 
+[23:47:24.463] [INFO ] [main] - Request Curl: curl -X GET -H "Accept:application/json" "https://restful-booker.herokuapp.com/booking/2588"  (ApiActions:logRequest:236) 
+[23:47:24.463] [INFO ] [main] - Verifying Status Code (ApiResponse:verifyStatusCode:180) 
+[23:47:24.466] [INFO ] [main] - Clearing session for persona [test_restfulbooker]... (ParallelSession:clearSession:69) 
