@@ -19,7 +19,7 @@
         <lombok.version>1.18.30</lombok.version>
         <java.faker.version>1.0.2</java.faker.version>
         <suite-xml>test-suites/testng-api.xml</suite-xml>
-        <suite-xml>test-suites/testng-web.xml</suite-xml>
+<!--        <suite-xml>test-suites/testng-web.xml</suite-xml>-->
 <!--                <suite-xml>test-suites/testng-android.xml</suite-xml>-->
         <!--    <suite-xml>test-suites/testng-android-app.xml</suite-xml>-->
         <!--    <suite-xml>test-suites/testng-grid.xml</suite-xml>-->
