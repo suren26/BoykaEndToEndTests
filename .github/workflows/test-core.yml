@@ -68,7 +68,7 @@ jobs:
       cloudUser: ${{ secrets.BS_USER }}
       cloudKey: ${{ secrets.BS_KEY }}
     with:
-      suite-name: testng-web
+      suite-name: testng-web-bs
 
   test-web-lt:
     needs:
