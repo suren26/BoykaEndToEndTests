@@ -122,93 +122,93 @@ jobs:
           cache: 'maven'
           check-latest: true
 
-#      - name: Download reports-testng-api files
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-testng-api
-#          path: /reports
-#
-#      - name: Download reports-testng-mobile-bs files
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-testng-mobile-bs
-#          path: /reports
-#
-#      - name: Download reports-testng-mobile-local files
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-testng-mobile-local
-#          path: /reports
-#
-#      - name: Download reports-testng-mobile-web files
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-testng-mobile-web
-#          path: /reports
-#
-#      - name: Download reports-testng-mobile-lt files
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-testng-mobile-lt
-#          path: /reports
-#
-#      - name: Download reports-testng-others files
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-testng-others
-#          path: /reports
-#
-#      - name: Download reports-testng-web-bs files
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-testng-web-bs
-#          path: /reports
-#
-#      - name: Download reports-testng-web-grid files
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-testng-web-grid
-#          path: /reports
-#
-#      - name: Download reports-testng-web-local files
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-testng-web-local
-#          path: /reports
-#
-#      - name: Download reports-testng-web-lt files
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-testng-web-lt
-#          path: /reports
-#
-#      - name: Generate Code Coverage Report
-#        run: |
-#          mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f pom.xml -Pcoverage-report
-#
-#      - name: Upload target folder
-#        uses: actions/upload-artifact@v3
-#        if: ${{ always() }}
-#        with:
-#          name: target-${{ github.run_id }}
-#          retention-days: 1
-#          path: |
-#            /target
-#            /logs
-#            /selenium-grid.log
-#            /screenshots
-#
-#      - name: Upload reports folder
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: reports-${{ github.run_id }}
-#          retention-days: 1
-#          path: |
-#            /reports
+      - name: Download reports-testng-api files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-api
+          path: /reports
+
+      - name: Download reports-testng-mobile-bs files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-mobile-bs
+          path: /reports
+
+      - name: Download reports-testng-mobile-local files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-mobile-local
+          path: /reports
+
+      - name: Download reports-testng-mobile-web files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-mobile-web
+          path: /reports
+
+      - name: Download reports-testng-mobile-lt files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-mobile-lt
+          path: /reports
+
+      - name: Download reports-testng-others files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-others
+          path: /reports
+
+      - name: Download reports-testng-web-bs files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-web-bs
+          path: /reports
+
+      - name: Download reports-testng-web-grid files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-web-grid
+          path: /reports
+
+      - name: Download reports-testng-web-local files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-web-local
+          path: /reports
+
+      - name: Download reports-testng-web-lt files
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-testng-web-lt
+          path: /reports
+
+      - name: Generate Code Coverage Report
+        run: |
+          mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f pom.xml -Pcoverage-report
+
+      - name: Upload target folder
+        uses: actions/upload-artifact@v3
+        if: ${{ always() }}
+        with:
+          name: target-${{ github.run_id }}
+          retention-days: 1
+          path: |
+            /target
+            /logs
+            /selenium-grid.log
+            /screenshots
+
+      - name: Upload reports folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: reports-${{ github.run_id }}
+          retention-days: 1
+          path: |
+            /reports
 
   analysis:
-#    needs:
-#      - report
+    needs:
+      - report
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
