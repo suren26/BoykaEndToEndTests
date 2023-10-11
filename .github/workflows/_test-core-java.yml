@@ -74,7 +74,7 @@ jobs:
       - name: Start Selenium Grid for Web
         if: ${{ inputs.run-grid && ! inputs.run-appium }}
         run: |
-          docker-compose -f core-java/compose/docker-compose.yml up -d
+          docker-compose -f compose/docker-compose.yml up -d
 
       - name: Launch iOS Simulator
         if: ${{ inputs.run-ios }}
@@ -111,7 +111,7 @@ jobs:
       - name: Stop Selenium Grid for Web
         if: ${{ inputs.run-grid && ! inputs.run-appium && always() }}
         run: |
-          docker-compose -f core-java/compose/docker-compose.yml down --remove-orphans
+          docker-compose -f compose/docker-compose.yml down --remove-orphans
 
       - name: Upload target folder
         uses: actions/upload-artifact@v3
@@ -120,9 +120,9 @@ jobs:
           name: target-${{ inputs.suite-name }}
           retention-days: 1
           path: |
-            ${{ github.workspace }}/core-java/target
-            ${{ github.workspace }}/core-java/logs
-            ${{ github.workspace }}/core-java/screenshots
+            ${{ github.workspace }}/target
+            ${{ github.workspace }}/logs
+            ${{ github.workspace }}/screenshots
 
       - name: Upload reports folder
         uses: actions/upload-artifact@v3
@@ -130,4 +130,4 @@ jobs:
           name: reports-${{ inputs.suite-name }}
           retention-days: 1
           path: |
-            ${{ github.workspace }}/core-java/reports
+            ${{ github.workspace }}/reports
