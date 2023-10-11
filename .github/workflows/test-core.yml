@@ -50,7 +50,7 @@ jobs:
       - build
     uses: ./.github/workflows/_test-core-java.yml
     with:
-      suite-name: testng-others
+      suite-name: testng
 
   test-web-local:
     needs:
