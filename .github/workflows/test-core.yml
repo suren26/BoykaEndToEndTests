@@ -111,26 +111,26 @@ jobs:
 #      run-ios: true
 #      run-android: true
 #      emulator-target: playstore
-#
-#  test-mobile-bs:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    secrets:
-#      cloudUser: ${{ secrets.BS_USER }}
-#      cloudKey: ${{ secrets.BS_KEY }}
-#    with:
-#      suite-name: testng-mobile-bs
-#
-#  test-mobile-lt:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    secrets:
-#      cloudUser: ${{ secrets.LT_USER }}
-#      cloudKey: ${{ secrets.LT_KEY }}
-#    with:
-#      suite-name: testng-mobile-lt
+
+  test-mobile-bs:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    secrets:
+      cloudUser: ${{ secrets.BS_USER }}
+      cloudKey: ${{ secrets.BS_KEY }}
+    with:
+      suite-name: testng-mobile-bs
+
+  test-mobile-lt:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    secrets:
+      cloudUser: ${{ secrets.LT_USER }}
+      cloudKey: ${{ secrets.LT_KEY }}
+    with:
+      suite-name: testng-mobile-lt
 
   report:
     needs:
