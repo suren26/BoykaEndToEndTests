@@ -224,17 +224,17 @@ jobs:
           cache: 'maven'
           check-latest: true
 
-#      - name: Download target folder
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: target-${{ github.run_id }}
-#          path: ${{ github.workspace }}
-#
-#      - name: Download reports folder
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: reports-${{ github.run_id }}
-#          path: ${{ github.workspace }}
+      - name: Download target folder
+        uses: actions/download-artifact@v3
+        with:
+          name: target-${{ github.run_id }}
+          path: ${{ github.workspace }}
+
+      - name: Download reports folder
+        uses: actions/download-artifact@v3
+        with:
+          name: reports-${{ github.run_id }}
+          path: ${{ github.workspace }}
 
       - name: Build and analyze
         env:
