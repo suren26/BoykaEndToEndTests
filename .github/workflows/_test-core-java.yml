@@ -113,21 +113,21 @@ jobs:
         run: |
           docker-compose -f compose/docker-compose.yml down --remove-orphans
 
-      - name: Upload target folder
-        uses: actions/upload-artifact@v3
-        if: ${{ failure() }}
-        with:
-          name: target-${{ inputs.suite-name }}
-          retention-days: 1
-          path: |
-            /target
-            /logs
-            /screenshots
-
-      - name: Upload reports folder
-        uses: actions/upload-artifact@v3
-        with:
-          name: reports-${{ inputs.suite-name }}
-          retention-days: 1
-          path: |
-            /reports
+#      - name: Upload target folder
+#        uses: actions/upload-artifact@v3
+#        if: ${{ failure() }}
+#        with:
+#          name: target-${{ inputs.suite-name }}
+#          retention-days: 1
+#          path: |
+#            /target
+#            /logs
+#            /screenshots
+#
+#      - name: Upload reports folder
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: reports-${{ inputs.suite-name }}
+#          retention-days: 1
+#          path: |
+#            /reports
