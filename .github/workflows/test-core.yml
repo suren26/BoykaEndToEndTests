@@ -108,7 +108,6 @@ jobs:
       - test-web-bs
       - test-web-lt
       - test-mobile-bs
-      - test-mobile-lt
 
     runs-on: ubuntu-latest
     steps:
