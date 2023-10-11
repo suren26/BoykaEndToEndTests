@@ -52,13 +52,13 @@ jobs:
 #    with:
 #      suite-name: testng-others
 #
-#  test-web-local:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    with:
-#      suite-name: testng-web
-#      runs-on: macos-latest
+  test-web-local:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      suite-name: testng-web
+      runs-on: macos-latest
 #
 #  test-web-bs:
 #    needs:
