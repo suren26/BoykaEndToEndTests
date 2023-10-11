@@ -45,13 +45,13 @@ jobs:
     with:
       suite-name: testng-api
 
-#  test-others:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    with:
-#      suite-name: testng-others
-#
+  test-others:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      suite-name: testng-others
+
   test-web-local:
     needs:
       - build
