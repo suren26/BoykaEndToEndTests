@@ -59,58 +59,58 @@ jobs:
     with:
       suite-name: testng-web
       runs-on: macos-latest
-#
-#  test-web-bs:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    secrets:
-#      cloudUser: ${{ secrets.BS_USER }}
-#      cloudKey: ${{ secrets.BS_KEY }}
-#    with:
-#      suite-name: testng-web-bs
-#
-#  test-web-lt:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    secrets:
-#      cloudUser: ${{ secrets.LT_USER }}
-#      cloudKey: ${{ secrets.LT_KEY }}
-#    with:
-#      suite-name: testng-web-lt
-#
-#  test-web-grid:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    with:
-#      suite-name: testng-web-grid
-#      run-grid: true
-#
-#  test-mobile-local:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    with:
-#      runs-on: macos-latest
-#      suite-name: testng-mobile-local
-#      run-appium: true
-#      run-ios: true
-#      run-android: true
-#      emulator-target: playstore
-#
-#  test-mobile-web:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    with:
-#      runs-on: macos-latest
-#      suite-name: testng-mobile-web
-#      run-appium: true
-#      run-ios: true
-#      run-android: true
-#      emulator-target: playstore
+
+  test-web-bs:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    secrets:
+      cloudUser: ${{ secrets.BS_USER }}
+      cloudKey: ${{ secrets.BS_KEY }}
+    with:
+      suite-name: testng-web-bs
+
+  test-web-lt:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    secrets:
+      cloudUser: ${{ secrets.LT_USER }}
+      cloudKey: ${{ secrets.LT_KEY }}
+    with:
+      suite-name: testng-web-lt
+
+  test-web-grid:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      suite-name: testng-web-grid
+      run-grid: true
+
+  test-mobile-local:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      runs-on: macos-latest
+      suite-name: testng-mobile-local
+      run-appium: true
+      run-ios: true
+      run-android: true
+      emulator-target: playstore
+
+  test-mobile-web:
+    needs:
+      - build
+    uses: ./.github/workflows/_test-core-java.yml
+    with:
+      runs-on: macos-latest
+      suite-name: testng-mobile-web
+      run-appium: true
+      run-ios: true
+      run-android: true
+      emulator-target: playstore
 
   test-mobile-bs:
     needs:
