@@ -135,15 +135,15 @@ jobs:
   report:
     needs:
       - test-api
-#      - test-others
+      - test-others
       - test-web-local
-#      - test-web-bs
-#      - test-web-lt
-#      - test-web-grid
-#      - test-mobile-local
-#      - test-mobile-web
-#      - test-mobile-bs
-#      - test-mobile-lt
+      - test-web-bs
+      - test-web-lt
+      - test-web-grid
+      - test-mobile-local
+      - test-mobile-web
+      - test-mobile-bs
+      - test-mobile-lt
 
     runs-on: ubuntu-latest
     steps:
