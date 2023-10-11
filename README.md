@@ -1,5 +1,3 @@
-# Poonawalla-Fincorp-Temporary-Repo-Endtoendtest
-
 Tests root : src/test
 
 End to End Web App Tests : src/test/java/ui
