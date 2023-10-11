@@ -7,7 +7,7 @@ on:
       - staging
       - develop
     paths:
-      - 'core-java/**'
+      - '/**'
       - '.github/**'
 
 concurrency:
@@ -126,61 +126,61 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-api
-          path: ${{ github.workspace }}/reports
+          path: /reports
 
       - name: Download reports-testng-mobile-bs files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-mobile-bs
-          path: ${{ github.workspace }}/reports
+          path: /reports
 
       - name: Download reports-testng-mobile-local files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-mobile-local
-          path: ${{ github.workspace }}/reports
+          path: /reports
 
       - name: Download reports-testng-mobile-web files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-mobile-web
-          path: ${{ github.workspace }}/reports
+          path: /reports
 
       - name: Download reports-testng-mobile-lt files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-mobile-lt
-          path: ${{ github.workspace }}/reports
+          path: /reports
 
       - name: Download reports-testng-others files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-others
-          path: ${{ github.workspace }}/reports
+          path: /reports
 
       - name: Download reports-testng-web-bs files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-web-bs
-          path: ${{ github.workspace }}/reports
+          path: /reports
 
       - name: Download reports-testng-web-grid files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-web-grid
-          path: ${{ github.workspace }}/reports
+          path: /reports
 
       - name: Download reports-testng-web-local files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-web-local
-          path: ${{ github.workspace }}/reports
+          path: /reports
 
       - name: Download reports-testng-web-lt files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-web-lt
-          path: ${{ github.workspace }}/reports
+          path: /reports
 
       - name: Generate Code Coverage Report
         run: |
@@ -193,10 +193,10 @@ jobs:
           name: target-${{ github.run_id }}
           retention-days: 1
           path: |
-            ${{ github.workspace }}/target
-            ${{ github.workspace }}/logs
-            ${{ github.workspace }}/selenium-grid.log
-            ${{ github.workspace }}/screenshots
+            /target
+            /logs
+            /selenium-grid.log
+            /screenshots
 
       - name: Upload reports folder
         uses: actions/upload-artifact@v3
@@ -204,7 +204,7 @@ jobs:
           name: reports-${{ github.run_id }}
           retention-days: 1
           path: |
-            ${{ github.workspace }}/reports
+            /reports
 
   analysis:
     needs:

@@ -120,9 +120,9 @@ jobs:
           name: target-${{ inputs.suite-name }}
           retention-days: 1
           path: |
-            ${{ github.workspace }}/target
-            ${{ github.workspace }}/logs
-            ${{ github.workspace }}/screenshots
+            /target
+            /logs
+            /screenshots
 
       - name: Upload reports folder
         uses: actions/upload-artifact@v3
@@ -130,4 +130,4 @@ jobs:
           name: reports-${{ inputs.suite-name }}
           retention-days: 1
           path: |
-            ${{ github.workspace }}/reports
+            /reports
