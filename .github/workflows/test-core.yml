@@ -126,65 +126,65 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-api
-          path: ${{ github.workspace }}/core-java/reports
+          path: ${{ github.workspace }}/reports
 
       - name: Download reports-testng-mobile-bs files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-mobile-bs
-          path: ${{ github.workspace }}/core-java/reports
+          path: ${{ github.workspace }}/reports
 
       - name: Download reports-testng-mobile-local files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-mobile-local
-          path: ${{ github.workspace }}/core-java/reports
+          path: ${{ github.workspace }}/reports
 
       - name: Download reports-testng-mobile-web files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-mobile-web
-          path: ${{ github.workspace }}/core-java/reports
+          path: ${{ github.workspace }}/reports
 
       - name: Download reports-testng-mobile-lt files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-mobile-lt
-          path: ${{ github.workspace }}/core-java/reports
+          path: ${{ github.workspace }}/reports
 
       - name: Download reports-testng-others files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-others
-          path: ${{ github.workspace }}/core-java/reports
+          path: ${{ github.workspace }}/reports
 
       - name: Download reports-testng-web-bs files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-web-bs
-          path: ${{ github.workspace }}/core-java/reports
+          path: ${{ github.workspace }}/reports
 
       - name: Download reports-testng-web-grid files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-web-grid
-          path: ${{ github.workspace }}/core-java/reports
+          path: ${{ github.workspace }}/reports
 
       - name: Download reports-testng-web-local files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-web-local
-          path: ${{ github.workspace }}/core-java/reports
+          path: ${{ github.workspace }}/reports
 
       - name: Download reports-testng-web-lt files
         uses: actions/download-artifact@v3
         with:
           name: reports-testng-web-lt
-          path: ${{ github.workspace }}/core-java/reports
+          path: ${{ github.workspace }}/reports
 
       - name: Generate Code Coverage Report
         run: |
-          mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f core-java/pom.xml -Pcoverage-report
+          mvn verify org.jacoco:jacoco-maven-plugin:prepare-agent -f pom.xml -Pcoverage-report
 
       - name: Upload target folder
         uses: actions/upload-artifact@v3
@@ -193,10 +193,10 @@ jobs:
           name: target-${{ github.run_id }}
           retention-days: 1
           path: |
-            ${{ github.workspace }}/core-java/target
-            ${{ github.workspace }}/core-java/logs
-            ${{ github.workspace }}/core-java/selenium-grid.log
-            ${{ github.workspace }}/core-java/screenshots
+            ${{ github.workspace }}/target
+            ${{ github.workspace }}/logs
+            ${{ github.workspace }}/selenium-grid.log
+            ${{ github.workspace }}/screenshots
 
       - name: Upload reports folder
         uses: actions/upload-artifact@v3
@@ -204,7 +204,7 @@ jobs:
           name: reports-${{ github.run_id }}
           retention-days: 1
           path: |
-            ${{ github.workspace }}/core-java/reports
+            ${{ github.workspace }}/reports
 
   analysis:
     needs:
@@ -228,16 +228,16 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: target-${{ github.run_id }}
-          path: ${{ github.workspace }}/core-java
+          path: ${{ github.workspace }}
 
       - name: Download reports folder
         uses: actions/download-artifact@v3
         with:
           name: reports-${{ github.run_id }}
-          path: ${{ github.workspace }}/core-java
+          path: ${{ github.workspace }}
 
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B sonar:sonar -f core-java/pom.xml -DskipTests -Dcheckstyle.skip
+        run: mvn -B sonar:sonar -f pom.xml -DskipTests -Dcheckstyle.skip
