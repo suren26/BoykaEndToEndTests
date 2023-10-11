@@ -80,38 +80,6 @@ jobs:
     with:
       suite-name: testng-web-lt
 
-  test-web-grid:
-    needs:
-      - build
-    uses: ./.github/workflows/_test-core-java.yml
-    with:
-      suite-name: testng-web-grid
-      run-grid: true
-
-#  test-mobile-local:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    with:
-#      runs-on: macos-latest
-#      suite-name: testng-mobile-local
-#      run-appium: true
-#      run-ios: true
-#      run-android: true
-#      emulator-target: playstore
-
-#  test-mobile-web:
-#    needs:
-#      - build
-#    uses: ./.github/workflows/_test-core-java.yml
-#    with:
-#      runs-on: macos-latest
-#      suite-name: testng-android
-#      run-appium: true
-#      run-ios: true
-#      run-android: true
-#      emulator-target: playstore
-
   test-mobile-bs:
     needs:
       - build
@@ -139,9 +107,6 @@ jobs:
       - test-web-local
       - test-web-bs
       - test-web-lt
-      - test-web-grid
-#      - test-mobile-local
-#      - test-mobile-web
       - test-mobile-bs
       - test-mobile-lt
 
